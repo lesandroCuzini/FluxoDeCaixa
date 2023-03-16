@@ -1,40 +1,40 @@
 # Arquitetura Limpa
 
-Aplicação demonstrando a utilização da Arquitetura Limpa bem como os limites/fronteiras das suas camadas.  
-### Desenho de referência
-![Desenho de referência](https://github.com/lesandroCuzini/FluxoDeCaixa/blob/main/ArquiteturaLimpa.PNG)
+AplicaÃ§Ã£o demonstrando a utilizaÃ§Ã£o da Arquitetura Limpa bem como os limites/fronteiras das suas camadas.  
+### Desenho de referÃªncia
+![Desenho de referÃªncia](https://github.com/lesandroCuzini/FluxoDeCaixa/blob/main/ArquiteturaLimpa.png)
 
-**1.) Entidades:** Nesta arquitetura o banco de dados *não* é mais o centro do aplicativo. As **regras de negócio** são.
-Na arquitetura limpa as regras de negócios são implementadas no núcleo do aplicativo: nos casos de uso e nas entidades.
-Nas entidades deve ser implementadas regras imutáveis.
+**1.) Entidades:** Nesta arquitetura o banco de dados *nÃ£o* Ã© mais o centro do aplicativo. As **regras de negÃ³cio** sÃ£o.
+Na arquitetura limpa as regras de negÃ³cios sÃ£o implementadas no nÃºcleo do aplicativo: nos casos de uso e nas entidades.
+Nas entidades deve ser implementadas regras imutÃ¡veis.
 
-**2.) Casos de uso:** As entidades impõem regras de negócios de alto nível. De uma perspectiva de responsabalidade única, eles têm apenas um motivo para mudar, na verdade provavelmente não vão mudar nada.
-Mas algumas regras mudam, é onde entra os casos de uso, essas regras específicas são implementadas no caso de uso, desta forma não se viola o Princípio da Responsabilidade Única.
+**2.) Casos de uso:** As entidades impÃµem regras de negÃ³cios de alto nÃ­vel. De uma perspectiva de responsabalidade Ãºnica, eles tÃªm apenas um motivo para mudar, na verdade provavelmente nÃ£o vÃ£o mudar nada.
+Mas algumas regras mudam, Ã© onde entra os casos de uso, essas regras especÃ­ficas sÃ£o implementadas no caso de uso, desta forma nÃ£o se viola o PrincÃ­pio da Responsabilidade Ãšnica.
 
-**3.) Arquitetura "gritante" (Screaming Architecture):** Tem se a tendência de agrupar as classes por tipo. Mas isso não deixa claro o que o aplicativo faz com esses tipos.
-Sem mencionar que falha na capacidade de escalar, conforme a aplicação aumentar, a quantidade entidades por exemplo vai aumentar.
+**3.) Arquitetura "gritante" (Screaming Architecture):** Tem se a tendÃªncia de agrupar as classes por tipo. Mas isso nÃ£o deixa claro o que o aplicativo faz com esses tipos.
+Sem mencionar que falha na capacidade de escalar, conforme a aplicaÃ§Ã£o aumentar, a quantidade entidades por exemplo vai aumentar.
 Em vez disso, a *Screaming Architecture* concentra na funcionalidade do aplicativo, ou seja, agrupar tudo por funcionalidade, fazendo com que o aplicativo "grite" suas funcionalidades.
-Deve ficar claro o que o aplicativo faz apenas com sua estrutura de arquivos e pastas, sem ler uma única linha de código.
-Colocando interfaces, entidades e casos de uso na mesma pasta, estamos agrupando por funcionalidade, o aplicativo crescerá organicamente e permanecerá fácil de navegar.
+Deve ficar claro o que o aplicativo faz apenas com sua estrutura de arquivos e pastas, sem ler uma Ãºnica linha de cÃ³digo.
+Colocando interfaces, entidades e casos de uso na mesma pasta, estamos agrupando por funcionalidade, o aplicativo crescerÃ¡ organicamente e permanecerÃ¡ fÃ¡cil de navegar.
 
 **4.) Limites das camadas:**
-A regra da arquitetura limpa é: todas as dependências apontam para dentro. As entidades estão no centro do aplicativo, a camada de casos de uso depende das entidades e a camada de infraestrutura depende dos casos de uso.
+A regra da arquitetura limpa Ã©: todas as dependÃªncias apontam para dentro. As entidades estÃ£o no centro do aplicativo, a camada de casos de uso depende das entidades e a camada de infraestrutura depende dos casos de uso.
 
-**5.) Infraestrtura:** Com as entidades, casos de uso e controladores, resta a camada de infraestrutura. Essa camada contém adaptadores de banco de dados, chamadas de API terceiros.
-A implementação da infraestrutura na camada externa tem várias vantagens:
- - São facilmente substituíveis.
- - O aplicativo se torna muito testável, ao separar infraestrutura resta regras de negócio para testar.
+**5.) Infraestrtura:** Com as entidades, casos de uso e controladores, resta a camada de infraestrutura. Essa camada contÃ©m adaptadores de banco de dados, chamadas de API terceiros.
+A implementaÃ§Ã£o da infraestrutura na camada externa tem vÃ¡rias vantagens:
+ - SÃ£o facilmente substituÃ­veis.
+ - O aplicativo se torna muito testÃ¡vel, ao separar infraestrutura resta regras de negÃ³cio para testar.
 
-# Resumo da aplicação
+# Resumo da aplicaÃ§Ã£o
 
-No quesito de negócio, esta aplicação tem como objetivo oferecer a gestão do fluxo de caixa de uma empresa, inicialmente esta aplicação deve disponibilizar dois recursos: efetuar os lançamentos de recebimentos e pagamentos, 
+No quesito de negÃ³cio, esta aplicaÃ§Ã£o tem como objetivo oferecer a gestÃ£o do fluxo de caixa de uma empresa, inicialmente esta aplicaÃ§Ã£o deve disponibilizar dois recursos: efetuar os lanÃ§amentos de recebimentos e pagamentos, 
 e obter o saldo consolidado por dia.  
 
 API Docs: /swagger/index.html  
 
-São estes dois _endpoints_ disponíveis:
- - [POST] /api/Lancamentos: insere lançamento
- - [GET] /api/Saldos/SaldoDiario: retorna o consolidado diário com o saldo
+SÃ£o estes dois _endpoints_ disponÃ­veis:
+ - [POST] /api/Lancamentos: insere lanÃ§amento
+ - [GET] /api/Saldos/SaldoDiario: retorna o consolidado diÃ¡rio com o saldo
 
 ## TO DO:
 
