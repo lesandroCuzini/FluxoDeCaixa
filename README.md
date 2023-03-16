@@ -41,13 +41,13 @@ S√£o estes dois _endpoints_ dispon√≠veis:
 - PostgreSQL
 - Docker
 
-## Executando a aplicaÁ„o
-1.) Clonar este repositÛrio: `https://github.com/lesandroCuzini/FluxoDeCaixa.git`   
+## Executando a aplica√ß√£o
+1.) Clonar este reposit√≥rio: `https://github.com/lesandroCuzini/FluxoDeCaixa.git`   
 
 2.1) Executando pelo Visual Studio:
-- Abrir a soluÁ„o: `FluxoDeCaixa.sln`
-- F5 -> executa a aplicaÁ„o no modo de depuraÁ„o.
-- Ctrl + F5 -> executa a aplicaÁ„o sem depuraÁ„o.   
+- Abrir a solu√ß√£o: `FluxoDeCaixa.sln`
+- F5 -> executa a aplica√ß√£o no modo de depura√ß√£o.
+- Ctrl + F5 -> executa a aplica√ß√£o sem depura√ß√£o.   
 
 2.2) Executando pelo .NET Cli:
 - `dotnet run --project .\FluxoDeCaixa.Web\FluxoDeCaixa.Web.csproj` *(Windows - PowerShell)*
