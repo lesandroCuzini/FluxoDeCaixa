@@ -41,6 +41,18 @@ São estes dois _endpoints_ disponíveis:
 - PostgreSQL
 - Docker
 
+## Executando a aplicação
+1.) Clonar este repositório: `https://github.com/lesandroCuzini/FluxoDeCaixa.git`   
+
+2.1) Executando pelo Visual Studio:
+- Abrir a solução: `FluxoDeCaixa.sln`
+- F5 -> executa a aplicação no modo de depuração.
+- Ctrl + F5 -> executa a aplicação sem depuração.   
+
+2.2) Executando pelo .NET Cli:
+- `dotnet run --project .\FluxoDeCaixa.Web\FluxoDeCaixa.Web.csproj` *(Windows - PowerShell)*
+- `dotnet run --project FluxoDeCaixa.Web/FluxoDeCaixa.Web.csproj` *(Linux)*
+
 ## TO DO:
 
 - [ ] Docker compose
