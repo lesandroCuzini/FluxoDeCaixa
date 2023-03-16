@@ -1,53 +1,53 @@
 # Arquitetura Limpa
 
-AplicaÁ„o demonstrando a utilizaÁ„o da Arquitetura Limpa bem como os limites/fronteiras das suas camadas.  
-### Desenho de referÍncia
-![Desenho de referÍncia](https://github.com/lesandroCuzini/FluxoDeCaixa/blob/main/ArquiteturaLimpa.PNG)
+Aplica√ß√£o demonstrando a utiliza√ß√£o da Arquitetura Limpa bem como os limites/fronteiras das suas camadas.  
+### Desenho de refer√™ncia
+![Desenho de refer√™ncia](https://github.com/lesandroCuzini/FluxoDeCaixa/blob/main/ArquiteturaLimpa.PNG)
 
-**1.) Entidades:** Nesta arquitetura o banco de dados *n„o* È mais o centro do aplicativo. As **regras de negÛcio** s„o.
-Na arquitetura limpa as regras de negÛcios s„o implementadas no n˙cleo do aplicativo: nos casos de uso e nas entidades.
-Nas entidades deve ser implementadas regras imut·veis.
+**1.) Entidades:** Nesta arquitetura o banco de dados *n√£o* √© mais o centro do aplicativo. As **regras de neg√≥cio** s√£o.
+Na arquitetura limpa as regras de neg√≥cios s√£o implementadas no n√∫cleo do aplicativo: nos casos de uso e nas entidades.
+Nas entidades deve ser implementadas regras imut√°veis.
 
-**2.) Casos de uso:** As entidades impıem regras de negÛcios de alto nÌvel. De uma perspectiva de responsabalidade ˙nica, eles tÍm apenas um motivo para mudar, na verdade provavelmente n„o v„o mudar nada.
-Mas algumas regras mudam, È onde entra os casos de uso, essas regras especÌficas s„o implementadas no caso de uso, desta forma n„o se viola o PrincÌpio da Responsabilidade ⁄nica.
+**2.) Casos de uso:** As entidades imp√µem regras de neg√≥cios de alto n√≠vel. De uma perspectiva de responsabalidade √∫nica, eles t√™m apenas um motivo para mudar, na verdade provavelmente n√£o v√£o mudar nada.
+Mas algumas regras mudam, √© onde entra os casos de uso, essas regras espec√≠ficas s√£o implementadas no caso de uso, desta forma n√£o se viola o Princ√≠pio da Responsabilidade √önica.
 
-**3.) Arquitetura "gritante" (Screaming Architecture):** Tem se a tendÍncia de agrupar as classes por tipo. Mas isso n„o deixa claro o que o aplicativo faz com esses tipos.
-Sem mencionar que falha na capacidade de escalar, conforme a aplicaÁ„o aumentar, a quantidade entidades por exemplo vai aumentar.
+**3.) Arquitetura "gritante" (Screaming Architecture):** Tem se a tend√™ncia de agrupar as classes por tipo. Mas isso n√£o deixa claro o que o aplicativo faz com esses tipos.
+Sem mencionar que falha na capacidade de escalar, conforme a aplica√ß√£o aumentar, a quantidade entidades por exemplo vai aumentar.
 Em vez disso, a *Screaming Architecture* concentra na funcionalidade do aplicativo, ou seja, agrupar tudo por funcionalidade, fazendo com que o aplicativo "grite" suas funcionalidades.
-Deve ficar claro o que o aplicativo faz apenas com sua estrutura de arquivos e pastas, sem ler uma ˙nica linha de cÛdigo.
-Colocando interfaces, entidades e casos de uso na mesma pasta, estamos agrupando por funcionalidade, o aplicativo crescer· organicamente e permanecer· f·cil de navegar.
+Deve ficar claro o que o aplicativo faz apenas com sua estrutura de arquivos e pastas, sem ler uma √∫nica linha de c√≥digo.
+Colocando interfaces, entidades e casos de uso na mesma pasta, estamos agrupando por funcionalidade, o aplicativo crescer√° organicamente e permanecer√° f√°cil de navegar.
 
 **4.) Limites das camadas:**
-A regra da arquitetura limpa È: todas as dependÍncias apontam para dentro. As entidades est„o no centro do aplicativo, a camada de casos de uso depende das entidades e a camada de infraestrutura depende dos casos de uso.
+A regra da arquitetura limpa √©: todas as depend√™ncias apontam para dentro. As entidades est√£o no centro do aplicativo, a camada de casos de uso depende das entidades e a camada de infraestrutura depende dos casos de uso.
 
-**5.) Infraestrtura:** Com as entidades, casos de uso e controladores, resta a camada de infraestrutura. Essa camada contÈm adaptadores de banco de dados, chamadas de API terceiros.
-A implementaÁ„o da infraestrutura na camada externa tem v·rias vantagens:
- - S„o facilmente substituÌveis.
- - O aplicativo se torna muito test·vel, ao separar infraestrutura resta regras de negÛcio para testar.
+**5.) Infraestrtura:** Com as entidades, casos de uso e controladores, resta a camada de infraestrutura. Essa camada cont√©m adaptadores de banco de dados, chamadas de API terceiros.
+A implementa√ß√£o da infraestrutura na camada externa tem v√°rias vantagens:
+ - S√£o facilmente substitu√≠veis.
+ - O aplicativo se torna muito test√°vel, ao separar infraestrutura resta regras de neg√≥cio para testar.
 
-# Resumo da aplicaÁ„o
+# Resumo da aplica√ß√£o
 
-No quesito de negÛcio, esta aplicaÁ„o tem como objetivo oferecer a gest„o do fluxo de caixa de uma empresa, inicialmente esta aplicaÁ„o deve disponibilizar dois recursos: efetuar os lanÁamentos de recebimentos e pagamentos, 
+No quesito de neg√≥cio, esta aplica√ß√£o tem como objetivo oferecer a gest√£o do fluxo de caixa de uma empresa, inicialmente esta aplica√ß√£o deve disponibilizar dois recursos: efetuar os lan√ßamentos de recebimentos e pagamentos, 
 e obter o saldo consolidado por dia.  
 
 API Docs: /swagger/index.html  
 
-S„o estes dois _endpoints_ disponÌveis:
- - [POST] /api/Lancamentos: insere lanÁamento
- - [GET] /api/Saldos/SaldoDiario: retorna o consolidado di·rio com o saldo
+S√£o estes dois _endpoints_ dispon√≠veis:
+ - [POST] /api/Lancamentos: insere lan√ßamento
+ - [GET] /api/Saldos/SaldoDiario: retorna o consolidado di√°rio com o saldo
 
 ## Tecnologias utilizadas
 - .NET 7, XUnit *(para testes automatizados)*
 - PostgreSQL
 - Docker
 
-## Executando a aplicaÁ„o
-1.) Clonar este repositÛrio: `https://github.com/lesandroCuzini/FluxoDeCaixa.git`   
+## Executando a aplica√ß√£o
+1.) Clonar este reposit√≥rio: `https://github.com/lesandroCuzini/FluxoDeCaixa.git`   
 
 2.1) Executando pelo Visual Studio:
-- Abrir a soluÁ„o: `FluxoDeCaixa.sln`
-- F5 -> executa a aplicaÁ„o no modo de depuraÁ„o.
-- Ctrl + F5 -> executa a aplicaÁ„o sem depuraÁ„o.   
+- Abrir a solu√ß√£o: `FluxoDeCaixa.sln`
+- F5 -> executa a aplica√ß√£o no modo de depura√ß√£o.
+- Ctrl + F5 -> executa a aplica√ß√£o sem depura√ß√£o.   
 
 2.2) Executando pelo .NET Cli:
 - `dotnet run --project .\FluxoDeCaixa.Web\FluxoDeCaixa.Web.csproj` *(Windows - PowerShell)*
