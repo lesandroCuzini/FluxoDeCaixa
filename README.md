@@ -36,6 +36,11 @@ São estes dois _endpoints_ disponíveis:
  - [POST] /api/Lancamentos: insere lançamento
  - [GET] /api/Saldos/SaldoDiario: retorna o consolidado diário com o saldo
 
+## Tecnologias utilizadas
+- .NET 7, XUnit *(para testes automatizados)*
+- PostgreSQL
+- Docker
+
 ## TO DO:
 
 - [ ] Docker compose
