@@ -2,7 +2,7 @@
 
 Aplicação demonstrando a utilização da Arquitetura Limpa bem como os limites/fronteiras das suas camadas.  
 ### Desenho de referência
-![Desenho de referência](https://github.com/lesandroCuzini/FluxoDeCaixa/blob/main/ArquiteturaLimpa.PNG)
+![Desenho de referência](https://github.com/lesandroCuzini/FluxoDeCaixa/blob/main/ArquiteturaLimpa.png)
 
 **1.) Entidades:** Nesta arquitetura o banco de dados *não* é mais o centro do aplicativo. As **regras de negócio** são.
 Na arquitetura limpa as regras de negócios são implementadas no núcleo do aplicativo: nos casos de uso e nas entidades.
